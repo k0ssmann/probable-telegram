@@ -170,7 +170,7 @@ def get_m3u8(key, sharekey, path, shib):
     with open(m3u8_path) as file:
         lines = [line.rstrip() for line in file]
 
-    m3u8mp4_url = (m3u8_url[0:-4]+lines[7]).format(sharekey=sharekey)
+    m3u8mp4_url = (m3u8_url[0:-4]+lines[-1]).format(sharekey=sharekey)
     m3u8mp4_path = path + "/{sharekey}_mp4.m3u8".format(sharekey=sharekey)
     download_file(m3u8mp4_url, m3u8mp4_path, shib)
     
